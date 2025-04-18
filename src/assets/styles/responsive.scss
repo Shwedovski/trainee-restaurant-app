@@ -21,4 +21,28 @@
         width: 100vh;
         max-width: 250px;
     }
+
+    .category-box {
+        padding: 15px 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .box {
+        align-items: center;
+        width: 70px;
+        height: 70px;
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .text-box {
+        margin-top: 8px;
+        font-size: 10px;
+        color: black;
+    }
 }
