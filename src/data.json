@@ -1,0 +1,134 @@
+{
+	"restaurants": [
+		"Plesentville",
+		"Mario",
+		"Tayko"
+	],
+	"categories": [
+		"burger",
+		"pasta",
+		"pizza",
+		"salad"
+	],
+	"dishes": [
+		{
+			"name": "Chicken Burger",
+			"description": "Very tasty burger",
+			"imageURL": "https://hips.hearstapps.com/hmg-prod/images/chicken-burgers-index-667b185b5f528.jpg",
+			"category": "burger",
+			"price": 240,
+			"specialLabel": "New 2025",
+			"restaurant": "Plesentville"
+		},
+		{
+			"name": "Cheese Burger",
+			"description": "Tons of cheese",
+			"imageURL": "https://www.sargento.com/assets/Uploads/Recipe/Image/GreatAmericanBurger__FillWzgwMCw4MDBd.jpg",
+			"category": "burger",
+			"price": 290,
+			"specialLabel": null,
+			"restaurant": "Plesentville"
+		},
+		{
+			"name": "Junior Burger",
+			"description": "For the kid",
+			"imageURL": "https://media.timeout.com/images/105148919/750/422/image.jpg",
+			"category": "burger",
+			"price": 175,
+			"specialLabel": null,
+			"restaurant": "Plesentville"
+		},
+		{
+			"name": "Mario pizza",
+			"description": "Classic with meat",
+			"imageURL": "https://salad.com.ua/sites/default/files/styles/1920x1080m/public/products/fon-pica-kopiya2.jpg?itok=T3u9eGJE",
+			"category": "pizza",
+			"price": 280,
+			"specialLabel": null,
+			"restaurant": "Mario"
+		},
+		{
+			"name": "Bacon pizza",
+			"description": "Sausages & Bacon",
+			"imageURL": "https://salad.com.ua/sites/default/files/styles/677x580/public/products/bekonella.jpg?itok=23BYoShB",
+			"category": "pizza",
+			"price": 290,
+			"specialLabel": "Best choice",
+			"restaurant": "Mario"
+		},
+		{
+			"name": "Philadelphia",
+			"description": "Pepperoni, cheese, pepper",
+			"imageURL": "https://salad.com.ua/sites/default/files/styles/1920x1080m/public/products/filadelfiya.png?itok=zSjzTymU",
+			"category": "pizza",
+			"price": 240,
+			"specialLabel": "Hot",
+			"restaurant": "Mario"
+		},
+		{
+			"name": "Simona",
+			"description": "Cheese, bacon, pineaple",
+			"imageURL": "https://salad.com.ua/sites/default/files/styles/677x580/public/products/simona.jpg?itok=Xe5IERAx",
+			"category": "pizza",
+			"price": 215,
+			"specialLabel": null,
+			"restaurant": "Mario"
+		},
+		{
+			"name": "Four cheese",
+			"description": "Cheese, cheese, and more cheese",
+			"imageURL": "https://salad.com.ua/sites/default/files/styles/677x580/public/products/pica-chotiri-sira.png?itok=mziFGbJY",
+			"category": "pizza",
+			"price": 215,
+			"specialLabel": null,
+			"restaurant": "Mario"
+		},
+		{
+			"name": "Greek salad",
+			"description": "Just from Greece :)",
+			"imageURL": "https://salad.com.ua/sites/default/files/styles/1920x1080m/public/products/salat-po-grecki.jpg?itok=IqsmvQaL",
+			"category": "salad",
+			"price": 215,
+			"specialLabel": null,
+			"restaurant": "Mario"
+		},
+		{
+			"name": "Cesarrini",
+			"description": "Not just a Cesar classic",
+			"imageURL": "https://salad.com.ua/sites/default/files/styles/677x580/public/products/cezarini-z-kurkoyu.png?itok=XT-JAlMT",
+			"category": "salad",
+			"price": 240,
+			"specialLabel": null,
+			"restaurant": "Mario"
+		},
+		{
+			"name": "Cesarrini Tayko",
+			"description": "Tasty, with seafood and lime",
+			"imageURL": "https://salad.com.ua/sites/default/files/styles/677x580/public/products/tayskiy-salat.jpg?itok=Bw54Qwwq",
+			"category": "salad",
+			"price": 290,
+			"specialLabel": null,
+			"restaurant": "Tayko"
+		},
+		{
+		
+			"name": "Crispy chicken salad",
+			"description": "Crispy chicken, green, tomatos",
+			"imageURL": "https://salad.com.ua/sites/default/files/styles/677x580/public/products/krispi-chiken-salat.jpg?itok=fUDy_Wdh",
+			"category": "salad",
+			"price": 210,
+			"specialLabel": "Unique",
+			"restaurant": "Tayko"
+		},
+		{
+		
+			"name": "Bangkok salad",
+			"description": "Iceberg salad, ckicken, romen",
+			"imageURL": "https://salad.com.ua/sites/default/files/styles/677x580/public/products/bangkokskii-salat.jpg?itok=ClvKiJ_E",
+			"category": "salad",
+			"price": 210,
+			"specialLabel": null,
+			"restaurant": "Tayko"
+		}
+	]
+}
