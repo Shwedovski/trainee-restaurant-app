@@ -21,28 +21,30 @@ header {
         background-color: #f9f9f9;
         border-radius: 8px;
         transition: background-color 0.3s ease;
-            &:hover {
-                background-color: #4c9bf1b8;
-            }
+
+        &:hover {
+            background-color: #4c9bf1b8;
+        }
     }
 
     .links {
         display: flex;
         gap: 14px;
-    }
 
-    .links button {
-        padding: 8px 12px;
-        font-size: 12px;
-        font-weight: 500;
-        color: #4c9bf1b8;
-        background-color: transparent;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-            &:hover{
+        button {
+            padding: 8px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #4c9bf1b8;
+            background-color: transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
                 background-color: #4c9bf1b8;
                 color: white;
             }
+        }
     }
 }
