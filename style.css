@@ -8,8 +8,8 @@
   .logo {
     max-width: 45px;
   }
-  .rest_list {
-    width: 100vh;
+  .rest-list {
+    width: 100vw;
     max-width: 250px;
   }
   .links {
@@ -33,14 +33,14 @@ header .logo {
   max-width: 60px;
   height: auto;
 }
-header .rest_list {
+header .rest-list {
   padding: 8px 10px;
   font-size: 14px;
   background-color: #f9f9f9;
   border-radius: 8px;
   transition: background-color 0.3s ease;
 }
-header .rest_list:hover {
+header .rest-list:hover {
   background-color: rgba(76, 155, 241, 0.7215686275);
 }
 header .links {
