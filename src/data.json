@@ -18,7 +18,8 @@
 			"category": "burger",
 			"price": 240,
 			"specialLabel": "New 2025",
-			"restaurant": "Plesentville"
+			"restaurant": "Plesentville",
+			"updatedDate": "Thu Apr 24 2025 11:01:38 GMT+0300"
 		},
 		{
 			"name": "Cheese Burger",
@@ -27,7 +28,8 @@
 			"category": "burger",
 			"price": 290,
 			"specialLabel": null,
-			"restaurant": "Plesentville"
+			"restaurant": "Plesentville",
+			"updatedDate": "Web Apr 23 2025 09:00:38 GMT+0300"
 		},
 		{
 			"name": "Junior Burger",
@@ -45,7 +47,8 @@
 			"category": "pizza",
 			"price": 280,
 			"specialLabel": null,
-			"restaurant": "Mario"
+			"restaurant": "Mario",
+			"updatedDate": "Web Apr 23 2025 09:00:38 GMT+0300"
 		},
 		{
 			"name": "Bacon pizza",
@@ -54,7 +57,8 @@
 			"category": "pizza",
 			"price": 290,
 			"specialLabel": "Best choice",
-			"restaurant": "Mario"
+			"restaurant": "Mario",
+			"updatedDate": "Web Apr 23 2025 12:15:00 GMT+0300"
 		},
 		{
 			"name": "Philadelphia",
@@ -72,7 +76,8 @@
 			"category": "pizza",
 			"price": 215,
 			"specialLabel": null,
-			"restaurant": "Mario"
+			"restaurant": "Mario",
+			"updatedDate": "Tue Apr 22 2025 12:15:00 GMT+0300"
 		},
 		{
 			"name": "Four cheese",
