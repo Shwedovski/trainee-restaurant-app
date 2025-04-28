@@ -1,15 +1,15 @@
 <header>
     <img class="logo" src="assets/images/logo.png" alt="Logo">
     
-        <select class="rest-list">
+        <select class="rest-list" >
             <option disabled selected hidden>Ресторани</option>
-            <option>Плезентвіль</option>
-            <option>Маріо</option>
-            <option>Тайко</option>
+            <option value="plesentville">Плезентвіль</option>
+            <option value="mario">Маріо</option>
+            <option value="tayko">Тайко</option>
         </select> 
 
     <div class="links">
-        <button class="favorite" type="button">Улюблені страви</button>
-        <button class="basket" type="button">Корзина</button>
+        <button class="favorite" type="button" routerLink="/favorite" routerLinkActive="active">Улюблені страви</button>
+        <button class="basket" type="button" routerLink="/basket" routerLinkActive="active">Корзина</button>
     </div>
 </header>
