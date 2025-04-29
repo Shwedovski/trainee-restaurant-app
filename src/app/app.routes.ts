@@ -7,10 +7,11 @@ import { TaykoComponent } from './tayko/tayko.component';
 import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-    {path: 'basket', component: BasketComponent},
-    {path: 'favorite', component: FavoriteComponent},
-    {path: 'plesentville', component: PlesentvilleComponent},
-    {path: 'mario', component: MarioComponent},
-    {path: 'tayko', component: TaykoComponent},
-    {path: '**', component:HomeComponent}
+    { path: 'home', component: HomeComponent },
+    { path: 'basket', component: BasketComponent },
+    { path: 'favorite', component: FavoriteComponent },
+    { path: 'plesentville', component: PlesentvilleComponent },
+    { path: 'mario', component: MarioComponent },
+    { path: 'tayko', component: TaykoComponent },
+    { path: '**', component: HomeComponent }
 ];
