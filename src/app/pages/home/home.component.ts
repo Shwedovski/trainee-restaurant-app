@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CategoriesListComponent } from '../components/categories-list/categories-list.component';
+import { CategoriesListComponent } from '../../components/categories-list/categories-list.component';
 
 @Component({
   selector: 'app-home',

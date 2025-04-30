@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { BasketComponent } from './basket/basket.component';
-import { FavoriteComponent } from './favorite/favorite.component';
-import { PlesentvilleComponent } from './plesentville/plesentville.component';
-import { MarioComponent } from './mario/mario.component';
-import { TaykoComponent } from './tayko/tayko.component';
-import { HomeComponent } from './home/home.component';
+import { BasketComponent } from './pages/basket/basket.component';
+import { FavoriteComponent } from './pages/favorite/favorite.component';
+import { PlesentvilleComponent } from './pages/plesentville/plesentville.component';
+import { MarioComponent } from './pages/mario/mario.component';
+import { TaykoComponent } from './pages/tayko/tayko.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
