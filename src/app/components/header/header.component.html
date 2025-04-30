@@ -1,6 +1,7 @@
 <header>
-    <img class="logo" src="assets/images/logo.png" alt="Logo">
-    
+    <a [routerLink]="['/']">
+        <img class="logo" src="assets/images/logo.png" alt="Logo">
+    </a>
         <select class="rest-list" (change)="onRestaurantChange($event)">
             <option value="" selected hidden>Ресторани</option>
             <option value="plesentville">Плезентвіль</option>
