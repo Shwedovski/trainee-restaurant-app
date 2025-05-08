@@ -21,17 +21,17 @@ export class MarioComponent implements OnInit {
     private dishService: DishService
   ) { }
 
-ngOnInit(): void {
-  this.restuarantName = this.route.snapshot.routeConfig?.path || '';
-  console.log('mario?', this.restuarantName);
+  ngOnInit(): void {
+    this.restuarantName = this.route.snapshot.routeConfig?.path || '';
+    console.log('mario?', this.restuarantName);
 
-  this.dishService.getDishes().subscribe(data => {
-    const allDishes: IRestuarantDish[] = data.dishes;
-    this.restuarantDishes = allDishes.filter(
-      dish => dish.restuarant?.toLowerCase() === this.restuarantName?.toLowerCase()
-    );
-    console.log('filtered?', JSON.stringify(this.restuarantDishes, null, 2));
-  })
+    this.dishService.getDishes().subscribe(data => {
+      const allDishes: IRestuarantDish[] = data.dishes;
+      console.log(allDishes);
+      this.restuarantDishes = allDishes.filter(
+        dish => dish.restuarant?.toLowerCase() === this.restuarantName?.toLowerCase()
+      );
+      console.log('filtered?', this.restuarantDishes);
+    });
+  }
 }
-}
-
