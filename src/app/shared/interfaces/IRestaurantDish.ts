@@ -1,10 +1,10 @@
-export interface IRestuarantDish {
+export interface IRestaurantDish {
     name: string;
     description: string;
     imageurl: string;
     category: string;
     price: number;
-    restuarant: string;
+    restaurant: string;
     updatedDate?: string;
     specialLabel?: string;
 }
