@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { DishesComponent } from "../../dishes/dishes.component";
+import { DishBoxComponent } from "../../dish-box/dish-box.component";
 import { IRestaurantDish } from '../../shared/interfaces/IRestaurantDish';
 import { DishService } from '../../services/dish.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { log } from 'console';
 
 @Component({
   standalone: true,
   selector: 'app-mario',
-  imports: [DishesComponent, CommonModule],
+  imports: [DishBoxComponent, CommonModule],
   templateUrl: './mario.component.html',
   styleUrl: './mario.component.scss'
 })

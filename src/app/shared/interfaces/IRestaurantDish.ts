@@ -1,7 +1,7 @@
 export interface IRestaurantDish {
     name: string;
     description: string;
-    imageurl: string;
+    imageURL: string;
     category: string;
     price: number;
     restaurant: string;
