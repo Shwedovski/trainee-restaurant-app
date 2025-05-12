@@ -1,2 +1,9 @@
-<app-dish-box [dishes]="restaurantDishes"></app-dish-box>
-<p>mario works!</p>
+<div *ngIf="restaurantDishes.length; else noDish" class="dishes-wrapper">
+  <ng-container *ngFor="let marioDish of restaurantDishes">
+    <app-dish-box [dish]="marioDish"></app-dish-box>
+  </ng-container>
+</div>
+
+<ng-template #noDish>
+  <p>No Mario dishes available.</p>
+</ng-template>

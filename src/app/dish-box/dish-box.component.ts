@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IRestaurantDish } from '../shared/interfaces/IRestaurantDish';
 
 @Component({
@@ -9,5 +9,6 @@ import { IRestaurantDish } from '../shared/interfaces/IRestaurantDish';
   styleUrl: './dish-box.component.scss'
 })
 export class DishBoxComponent {
-  @Input() dishes: IRestaurantDish [] = [];
+  @Input() dish: IRestaurantDish;
+
 }

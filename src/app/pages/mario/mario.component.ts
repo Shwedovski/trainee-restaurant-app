@@ -17,12 +17,15 @@ export class MarioComponent implements OnInit {
   restaurantName: string = '';
 
   constructor(private route: ActivatedRoute,
-            private dishService: DishService,
+    private dishService: DishService,
   ) { }
 
   ngOnInit(): void {
     this.restaurantName = this.route.snapshot.routeConfig?.path || '';
+    this.initDishes();
+  }
 
+  private initDishes(): void {
     this.dishService.getDishes().subscribe(data => {
       const allDishes: IRestaurantDish[] = data.dishes;
 

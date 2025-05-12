@@ -1,19 +1,18 @@
-<div class="box-container">
-    <ng-container *ngFor="let dish of dishes">
-        <div class="dish-box">
-            <img class="dish-image" [src]="dish.imageURL" />
-            <div class="dish-info">
-                <div class="restaurant-label">{{ dish.restaurant }}</div>
-                <h3 class="dish-name">{{ dish.name }}</h3>
-                <p class="dish-description">{{ dish.description }}</p>
-                <div class="dish-footer">
-                    <div class="dish-price">{{ dish.price | currency: 'UAH:' }}</div>
-                    <div>
-                        <button class="add-to-basket">До кошика</button>
-                        <button class="add-to-basket">Улюблене</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ng-container>
+<div class="dish-box">
+  <img class="dish-image" [src]="dish.imageURL" />
+
+  <div class="dish-info">
+    <div class="restaurant-label">{{ dish.restaurant }}</div>
+    <h3 class="dish-name">{{ dish.name }}</h3>
+    <p class="dish-description">{{ dish.description }}</p>
+
+    <div class="dish-footer">
+      <div class="dish-price">{{ dish.price | currency : "UAH:" }}</div>
+
+      <div>
+        <button class="action-button">До кошика</button>
+        <button class="action-button">Улюблене</button>
+      </div>
+    </div>
+  </div>
 </div>
