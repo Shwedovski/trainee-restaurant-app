@@ -7,6 +7,7 @@ import { IRestaurantDish } from '../shared/interfaces/IRestaurantDish';
   providedIn: 'root'
 })
 export class DishService {
+  basketDishesStore: IRestaurantDish[] = [];
 
   constructor(private http: HttpClient) { }
 

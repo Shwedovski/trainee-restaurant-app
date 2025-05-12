@@ -1,4 +1,4 @@
-<div class="dish-box">
+<div *ngIf="dish" class="dish-box">
   <img class="dish-image" [src]="dish.imageURL" />
 
   <div class="dish-info">
@@ -10,7 +10,7 @@
       <div class="dish-price">{{ dish.price | currency : "UAH:" }}</div>
 
       <div>
-        <button class="action-button">До кошика</button>
+        <button class="action-button" (click)="addDishToBasket()">До кошика</button>
         <button class="action-button">Улюблене</button>
       </div>
     </div>

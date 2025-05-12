@@ -1,1 +1,11 @@
-<p>basket works!</p>
+<h1>Моя корзина</h1>
+
+<div *ngIf="basketDishes.length; else emptyBasket" class="dishes-wrapper">
+  <ng-container *ngFor="let dish of basketDishes">
+    <app-dish-box [dish]="dish" />
+  </ng-container>
+</div>
+
+<ng-template #emptyBasket>
+  <p>Пуста корзина.</p>
+</ng-template>

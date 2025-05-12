@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { IRestaurantDish } from '../shared/interfaces/IRestaurantDish';
+import { DishService } from '../services/dish.service';
 
 @Component({
   selector: 'app-dish-box',
@@ -11,4 +12,10 @@ import { IRestaurantDish } from '../shared/interfaces/IRestaurantDish';
 export class DishBoxComponent {
   @Input() dish: IRestaurantDish;
 
+  constructor(private dishService: DishService,
+  ) { }
+
+  addDishToBasket(): void {
+    this.dishService.basketDishesStore.push(this.dish);
+  }
 }
