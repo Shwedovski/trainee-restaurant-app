@@ -1,1 +1,11 @@
-<p>favorite works!</p>
+<h1>Мої вподобання</h1>
+
+<div *ngIf="favoriteDishes.length; else emptyFavorite" class="dishes-wrapper">
+  <ng-container *ngFor="let dish of favoriteDishes">
+    <app-dish-box [dish]="dish" />
+  </ng-container>
+</div>
+
+<ng-template #emptyFavorite>
+  <p>Пусті вподобання.</p>
+</ng-template>

@@ -8,6 +8,7 @@ import { IRestaurantDish } from '../shared/interfaces/IRestaurantDish';
 })
 export class DishService {
   basketDishesStore: IRestaurantDish[] = [];
+  favoriteDishesStore: IRestaurantDish[] = [];
 
   constructor(private http: HttpClient) { }
 

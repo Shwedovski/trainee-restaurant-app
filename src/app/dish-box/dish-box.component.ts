@@ -18,4 +18,8 @@ export class DishBoxComponent {
   addDishToBasket(): void {
     this.dishService.basketDishesStore.push(this.dish);
   }
+
+  addDishToFavorite(): void {
+    this.dishService.favoriteDishesStore.push(this.dish);
+  }
 }

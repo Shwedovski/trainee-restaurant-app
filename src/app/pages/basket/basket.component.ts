@@ -21,5 +21,8 @@ export class BasketComponent implements OnInit {
 
   ngOnInit(): void {
     this.basketDishes = this.dishService.basketDishesStore;
+
   }
+
+  
 }
