@@ -5,6 +5,7 @@ import { PlesentvilleComponent } from './pages/plesentville/plesentville.compone
 import { MarioComponent } from './pages/mario/mario.component';
 import { TaykoComponent } from './pages/tayko/tayko.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -13,5 +14,6 @@ export const routes: Routes = [
     { path: 'plesentville', component: PlesentvilleComponent },
     { path: 'mario', component: MarioComponent },
     { path: 'tayko', component: TaykoComponent },
+    { path: 'login', component: LoginFormComponent},
     { path: '**', component: HomeComponent }
 ];

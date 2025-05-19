@@ -1,0 +1,18 @@
+<form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <div class="formFields">
+        <input formControlName="login" placeholder="Логін" type="text">
+    </div>
+    <div class="formFields">
+        <input formControlName="name" placeholder="Ім'я" type="text">
+    </div>
+    <div class="formFields">
+        <input formControlName="password" placeholder="Пароль" type="password">
+    </div>
+    <div class="formFields">
+        <input formControlName="confirmPassword" placeholder="Повторіть пароль" type="password">
+        <div *ngIf="loginForm.errors?.['passwordsMismatch'] && submitted" style="color: red;">
+            Паролі не збігаються!
+        </div>
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid">Зареєструватись</button>
+</form>
