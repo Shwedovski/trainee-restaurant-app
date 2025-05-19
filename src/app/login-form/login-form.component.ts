@@ -12,11 +12,16 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class LoginFormComponent implements OnInit {
 
   loginForm!: FormGroup;
-  submitted = false; 
+  isSubmitted = false; 
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.initForm();
+    this.passwordMatchChanges();
+  }
+
+  private initForm(): void {
     this.loginForm = this.fb.group({
       login: ['', Validators.required],
       name: ['', Validators.required],
@@ -25,7 +30,9 @@ export class LoginFormComponent implements OnInit {
     }, {
       validators: this.passwordsMatchValidator 
     });
+  }
 
+  private passwordMatchChanges(): void {
     this.loginForm.get('password')?.valueChanges.subscribe(() => {
       this.loginForm.updateValueAndValidity();
     });
@@ -44,7 +51,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   submitForm(): void {
-    this.submitted = true;
+    this.isSubmitted = true;
     this.loginForm.markAllAsTouched();
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
