@@ -12,6 +12,7 @@ import { DishService } from '../services/dish.service';
 export class DishBoxComponent {
   @Input() dish: IRestaurantDish;
   @Input() showRemoveButton: boolean = false;
+  @Input() IsBasket: boolean = false;
   @Output() remove = new EventEmitter<void>();
 
   constructor(private dishService: DishService,
@@ -27,5 +28,17 @@ export class DishBoxComponent {
 
   removeDish(): void {
     this.remove.emit();
+  }
+
+  quantityInBasket: number = 1;
+
+  increaceQuantity(): void {
+    this.quantityInBasket++;
+  }
+
+  decreaseQuantity(): void {
+    if (this.quantityInBasket > 1) {
+      this.quantityInBasket--;
+    }
   }
 }
