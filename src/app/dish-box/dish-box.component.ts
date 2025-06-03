@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IRestaurantDish } from '../shared/interfaces/IRestaurantDish';
 import { DishService } from '../services/dish.service';
 
@@ -11,6 +11,8 @@ import { DishService } from '../services/dish.service';
 })
 export class DishBoxComponent {
   @Input() dish: IRestaurantDish;
+  @Input() showRemoveButton: boolean = false;
+  @Output() remove = new EventEmitter<void>();
 
   constructor(private dishService: DishService,
   ) { }
@@ -21,5 +23,9 @@ export class DishBoxComponent {
 
   addDishToFavorite(): void {
     this.dishService.favoriteDishesStore.push(this.dish);
+  }
+
+  removeDish(): void {
+    this.remove.emit();
   }
 }

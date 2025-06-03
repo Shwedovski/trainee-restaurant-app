@@ -1,8 +1,15 @@
 <h1>Моя корзина</h1>
 
+<button *ngIf="basketDishes.length" class="btn btn-primary" (click)="removeAllBasket()">
+  Очистити корзину
+</button>
+
 <div *ngIf="basketDishes.length; else emptyBasket" class="dishes-wrapper">
   <ng-container *ngFor="let dish of basketDishes">
-    <app-dish-box [dish]="dish" />
+    <app-dish-box       
+      [dish]="dish" 
+      [showRemoveButton]="true"
+      (remove)="removeFromBasket(dish)"/>
   </ng-container>
 </div>
 

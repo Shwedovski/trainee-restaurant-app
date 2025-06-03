@@ -1,8 +1,16 @@
 <h1>Мої вподобання</h1>
 
+<button *ngIf="favoriteDishes.length" class="btn btn-primary" (click)="removeAllFavorites()">
+  Видалити всі вподобання
+</button>
+
 <div *ngIf="favoriteDishes.length; else emptyFavorite" class="dishes-wrapper">
   <ng-container *ngFor="let dish of favoriteDishes">
-    <app-dish-box [dish]="dish" />
+    <app-dish-box 
+      [dish]="dish" 
+      [showRemoveButton]="true"
+      (remove)="removeFromFavorites(dish)"
+    ></app-dish-box>
   </ng-container>
 </div>
 

@@ -24,5 +24,17 @@ export class BasketComponent implements OnInit {
 
   }
 
-  
+  removeAllBasket(): void {
+    this.dishService.basketDishesStore.length = 0;
+  }
+
+  removeFromBasket(dish: IRestaurantDish): void {
+    const index = this.dishService.basketDishesStore.findIndex(
+      (      d: { name: string; restaurant: string; }) => d.name === dish.name && d.restaurant === dish.restaurant
+    );
+    if (index > -1) {
+      this.dishService.basketDishesStore.splice(index, 1);
+    }
+  }
+
 }

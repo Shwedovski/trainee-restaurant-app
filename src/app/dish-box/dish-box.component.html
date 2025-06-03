@@ -12,6 +12,7 @@
       <div>
         <button class="action-button" (click)="addDishToBasket()">До кошика</button>
         <button class="action-button" (click)="addDishToFavorite()">Улюблене</button>
+        <button class="action-button" *ngIf="showRemoveButton" (click)="removeDish()">Видалити</button>
       </div>
     </div>
   </div>
