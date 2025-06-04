@@ -1,6 +1,9 @@
 <div *ngIf="restaurantDishes.length; else noDish" class="dishes-wrapper">
     <ng-container *ngFor="let plesentvilleDish of restaurantDishes">
-        <app-dish-box [dish]="plesentvilleDish" />
+        <app-dish-box 
+        [dish]="plesentvilleDish" 
+        [showBasketButton]="true" 
+        [showFavoriteButton]="true" />
     </ng-container>
 </div>
 

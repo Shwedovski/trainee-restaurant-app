@@ -1,10 +1,12 @@
 <div *ngIf="restaurantDishes.length; else noDish" class="dishes-wrapper">
   <ng-container *ngFor="let taykoDish of restaurantDishes">
-    <app-dish-box [dish]="taykoDish" />
+    <app-dish-box 
+    [dish]="taykoDish" 
+    [showBasketButton]="true" 
+    [showFavoriteButton]="true" />
   </ng-container>
 </div>
 
 <ng-template #noDish>
   <p>No Tayko dishes available.</p>
 </ng-template>
- 

@@ -13,6 +13,8 @@ export class DishBoxComponent {
   @Input() dish: IRestaurantDish;
   @Input() showRemoveButton: boolean = false;
   @Input() IsBasket: boolean = false;
+  @Input() showFavoriteButton: boolean = false;
+  @Input() showBasketButton: boolean = false;
   @Output() remove = new EventEmitter<void>();
 
   constructor(private dishService: DishService,

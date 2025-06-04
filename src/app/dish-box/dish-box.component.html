@@ -2,22 +2,22 @@
   <img class="dish-image" [src]="dish.imageURL" />
 
   <div class="dish-info">
-    <div class="restaurant-label">{{ dish.restaurant }}</div>
+    <span class="restaurant-label">{{ dish.restaurant }}</span>
     <h3 class="dish-name">{{ dish.name }}</h3>
     <p class="dish-description">{{ dish.description }}</p>
 
     <div class="dish-footer">
-      <div class="dish-price">{{ dish.price | currency : "UAH:" }}</div>
+      <span class="dish-price">{{ dish.price | currency : "UAH:" }}</span>
 
       <div>
         <div *ngIf="IsBasket" class="quantity-selector">
-          <button (click)="decreaseQuantity()" class="action-button">-</button>
+          <button class="action-button" (click)="decreaseQuantity()" >-</button>
           <span class="quantity">{{ quantityInBasket }}</span>
-          <button (click)="increaceQuantity()" class="action-button">+</button>
+          <button class="action-button" (click)="increaceQuantity()">+</button>
         </div>
-        <button class="action-button" (click)="addDishToBasket()">До кошика</button>
-        <button class="action-button" (click)="addDishToFavorite()">Улюблене</button>
-        <button class="action-button" *ngIf="showRemoveButton" (click)="removeDish()">Видалити</button>
+        <button *ngIf="showBasketButton" class="action-button" (click)="addDishToBasket()">До кошика</button>
+        <button *ngIf="showFavoriteButton" class="action-button" (click)="addDishToFavorite()">Улюблене</button>
+        <button *ngIf="showRemoveButton" class="action-button" (click)="removeDish()">Видалити</button>
       </div>
     </div>
   </div>
