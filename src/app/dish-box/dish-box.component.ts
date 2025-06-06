@@ -2,10 +2,18 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IRestaurantDish } from '../shared/interfaces/IRestaurantDish';
 import { DishService } from '../services/dish.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule, MatFabButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-dish-box',
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatButtonModule,
+  ],
   templateUrl: './dish-box.component.html',
   styleUrl: './dish-box.component.scss'
 })

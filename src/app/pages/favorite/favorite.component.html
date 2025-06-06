@@ -1,7 +1,13 @@
 <h1>Мої вподобання</h1>
 
-<button *ngIf="favoriteDishes.length" class="btn btn-primary" (click)="removeAllFavorites()">
-  Видалити всі вподобання
+<button 
+  *ngIf="favoriteDishes.length" 
+  mat-button
+  color="primary" 
+  matTooltip="Видалити всі вподобання"
+  class="btn btn-primary" 
+  (click)="removeAllFavorites()">
+  <mat-icon>delete</mat-icon>
 </button>
 
 <div *ngIf="favoriteDishes.length; else emptyFavorite" class="dishes-wrapper">

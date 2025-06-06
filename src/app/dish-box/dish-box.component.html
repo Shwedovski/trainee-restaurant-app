@@ -10,14 +10,37 @@
       <span class="dish-price">{{ dish.price | currency : "UAH:" }}</span>
 
       <div>
-        <div *ngIf="IsBasket" class="quantity-selector">
-          <button class="action-button" (click)="decreaseQuantity()" >-</button>
-          <span class="quantity">{{ quantityInBasket }}</span>
-          <button class="action-button" (click)="increaceQuantity()">+</button>
-        </div>
-        <button *ngIf="showBasketButton" class="action-button" (click)="addDishToBasket()">До кошика</button>
-        <button *ngIf="showFavoriteButton" class="action-button" (click)="addDishToFavorite()">Улюблене</button>
-        <button *ngIf="showRemoveButton" class="action-button" (click)="removeDish()">Видалити</button>
+        <button *ngIf="IsBasket" class="action-button" (click)="decreaseQuantity()" >-</button>
+        <span *ngIf="IsBasket" class="quantity">{{ quantityInBasket }}</span>
+        <button *ngIf="IsBasket" class="action-button" (click)="increaceQuantity()">+</button>
+
+        <button 
+          *ngIf="showBasketButton" 
+          class="action-button"   
+          mat-button
+          color="primary"
+          matTooltip="Додати до кошика"
+          (click)="addDishToBasket()">
+          <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+        <button 
+          mat-button
+          color="primary"
+          matTooltip="Додати в улюблене"
+          *ngIf="showFavoriteButton" 
+          class="action-button" 
+          (click)="addDishToFavorite()">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button 
+          mat-button
+          color="primary"
+          matTooltip="Видалити"
+          *ngIf="showRemoveButton" 
+          class="action-button" 
+          (click)="removeDish()">
+          <mat-icon>delete</mat-icon>
+        </button>
       </div>
     </div>
   </div>

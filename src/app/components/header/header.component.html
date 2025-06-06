@@ -10,8 +10,26 @@
         </select> 
 
     <div class="links">
-        <button class="favorite" type="button" routerLink="/favorite" routerLinkActive="active">Улюблені страви</button>
-        <button class="basket" type="button" routerLink="/basket" routerLinkActive="active">Корзина</button>
+        <button
+            mat-button
+            color="primary" 
+            matTooltip="Улюблені страви"
+            class="favorite" 
+            type="button" 
+            routerLink="/favorite" 
+            routerLinkActive="active">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button 
+            mat-button
+            color="primary"
+            matTooltip="Кошик"
+            class="basket" 
+            type="button" 
+            routerLink="/basket" 
+            routerLinkActive="active">
+            <mat-icon>shopping_basket</mat-icon>
+        </button>
         <button class="login" type="button" routerLink="/login" routerLinkActive="active">Вхід</button>
     </div>
 </header>
