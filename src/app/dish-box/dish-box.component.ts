@@ -29,7 +29,7 @@ export class DishBoxComponent {
   ) { }
 
   addDishToBasket(): void {
-    this.dishService.basketDishesStore.push(this.dish);
+    this.dishService.addToBasket(this.dish);
   }
 
   addDishToFavorite(): void {

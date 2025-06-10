@@ -1,7 +1,8 @@
 .dishes-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
     gap: 16px;
 }

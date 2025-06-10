@@ -5,7 +5,8 @@ import { DishBoxComponent } from "../../dish-box/dish-box.component";
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatButtonModule, MatFabButton } from '@angular/material/button';
+import { MatButtonModule} from '@angular/material/button';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-basket',
@@ -19,27 +20,20 @@ import { MatButtonModule, MatFabButton } from '@angular/material/button';
   templateUrl: './basket.component.html',
   styleUrl: './basket.component.scss'
 })
-export class BasketComponent implements OnInit {
-  basketDishes: IRestaurantDish[] = [];
+export class BasketComponent  {
+  basketDishes$: Observable<IRestaurantDish[]>;
 
   constructor(private dishService: DishService,
-  ) { }
-
-  ngOnInit(): void {
-    this.basketDishes = this.dishService.basketDishesStore;
+  ) {
+    this.basketDishes$ = this.dishService.basketStore$.asObservable();
   }
 
   removeAllBasket(): void {
-    this.dishService.basketDishesStore.length = 0;
+    this.dishService.clearBasket();
   }
 
   removeFromBasket(dish: IRestaurantDish): void {
-    const index = this.dishService.basketDishesStore.findIndex(
-      d => d.name === dish.name && d.restaurant === dish.restaurant
-    );
-    if (index > -1) {
-      this.dishService.basketDishesStore.splice(index, 1);
-    }
+    this.dishService.removeFromBasket(dish);
   }
 
 }
