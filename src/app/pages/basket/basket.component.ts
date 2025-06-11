@@ -35,5 +35,4 @@ export class BasketComponent  {
   removeFromBasket(dish: IRestaurantDish): void {
     this.dishService.removeFromBasket(dish);
   }
-
 }

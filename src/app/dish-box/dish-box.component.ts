@@ -40,15 +40,11 @@ export class DishBoxComponent {
     this.remove.emit();
   }
 
-  quantityInBasket: number = 1;
-
-  increaceQuantity(): void {
-    this.quantityInBasket++;
+  increaseQuantity(dish: IRestaurantDish): void {
+    this.dishService.increaseQuantity(dish);
   }
 
-  decreaseQuantity(): void {
-    if (this.quantityInBasket > 1) {
-      this.quantityInBasket--;
-    }
+  decreaseQuantity(dish: IRestaurantDish): void {
+    this.dishService.decreaseQuantity(dish);
   }
 }

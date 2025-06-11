@@ -7,4 +7,5 @@ export interface IRestaurantDish {
     restaurant: string;
     updatedDate?: string;
     specialLabel?: string;
+    quantity?: number;
 }

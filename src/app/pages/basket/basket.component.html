@@ -1,14 +1,10 @@
 <h1>Моя корзина</h1>
+<ng-template #emptyBasket$>
+  <p>Пуста корзина.</p>
+</ng-template>
 
-<div *ngFor="let dish of basketDishes$ | async" class="dishes-wrapper">
-  <app-dish-box
-    [dish]="dish"
-    [IsBasket]="true"
-    [showRemoveButton]="true"
-    (remove)="removeFromBasket(dish)">
-  </app-dish-box>
-</div>
   <button 
+    *ngIf="(basketDishes$ | async)?.length || 0 > 0"
     mat-button
     color="primary" 
     matTooltip="Очистити корзину"
@@ -16,7 +12,13 @@
     (click)="removeAllBasket()">
     <mat-icon>delete</mat-icon>
   </button>
-
-<ng-template #emptyBasket$>
-  <p>Пуста корзина.</p>
-</ng-template>
+  <div class="dishes-wrapper">
+    <ng-container *ngFor="let dish of basketDishes$ | async">
+      <app-dish-box
+        [dish]="dish"
+        [IsBasket]="true"
+        [showRemoveButton]="true"
+        (remove)="removeFromBasket(dish)">
+      </app-dish-box>
+    </ng-container>
+  </div>

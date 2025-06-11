@@ -10,9 +10,9 @@
       <span class="dish-price">{{ dish.price | currency : "UAH:" }}</span>
 
       <div>
-        <button *ngIf="IsBasket" class="action-button" (click)="decreaseQuantity()" >-</button>
-        <span *ngIf="IsBasket" class="quantity">{{ quantityInBasket }}</span>
-        <button *ngIf="IsBasket" class="action-button" (click)="increaceQuantity()">+</button>
+        <button *ngIf="IsBasket" class="action-button" (click)="decreaseQuantity(dish)">-</button>
+        <span *ngIf="IsBasket" class="quantity">{{ dish.quantity || 1}}</span>
+        <button *ngIf="IsBasket" class="action-button" (click)="increaseQuantity(dish)">+</button>
 
         <button 
           *ngIf="showBasketButton" 

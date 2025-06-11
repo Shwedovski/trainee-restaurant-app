@@ -19,13 +19,13 @@ export class DishService {
 
   getTotalPrice(): Observable<number> {
     return this.basketStore$.pipe(
-      map(dishes => dishes.reduce((total, dish) => total + dish.price, 0))
+      map(dishes => dishes.reduce((total, dish) => total + dish.price * (dish.quantity || 1), 0))
     );
   }
 
   addToBasket(dish: IRestaurantDish): void {
-    const current = this.basketStore$.value;
-    this.basketStore$.next([...current, { ...dish }]);
+    const currentDishes = this.basketStore$.value;
+    this.basketStore$.next([...currentDishes, { ...dish }]);
   }
 
   clearBasket(): void {
@@ -33,14 +33,36 @@ export class DishService {
   }
 
   removeFromBasket(dish: IRestaurantDish): void {
-    const current = this.basketStore$.value;
-    const index = current.findIndex(
-      d => d.name === dish.name && d.restaurant === dish.restaurant
+    const currentDishes: IRestaurantDish[] = this.basketStore$.value;
+    const index: number = currentDishes.findIndex(
+      basketDish => basketDish.name === dish.name && basketDish.restaurant === dish.restaurant
     );
-    if (index > -1) {
-      const updated = [...current];
+
+    if(index > -1) {
+      const updated: IRestaurantDish[] = [...currentDishes];
+
       updated.splice(index, 1);
       this.basketStore$.next(updated);
     }
+  }
+
+  increaseQuantity(dish: IRestaurantDish): void {
+    const currentDishes: IRestaurantDish[] = this.basketStore$.value.map(
+      basketDish => basketDish.name === dish.name && basketDish.restaurant === dish.restaurant
+        ? { ...basketDish, quantity: Math.max(basketDish.quantity || 1) + 1 }
+        : basketDish
+    );
+
+    this.basketStore$.next(currentDishes);
+  }
+
+  decreaseQuantity(dish: IRestaurantDish): void {
+    const currentDishes: IRestaurantDish[] = this.basketStore$.value.map(
+      basketDish => basketDish.name === dish.name && basketDish.restaurant === dish.restaurant
+        ? { ...basketDish, quantity: ((basketDish.quantity || 1) - 1, 1) }
+        : basketDish
+    );
+    
+    this.basketStore$.next(currentDishes);
   }
 }
