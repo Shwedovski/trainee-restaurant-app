@@ -9,7 +9,7 @@ import { IRestaurantDish } from '../shared/interfaces/IRestaurantDish';
 export class DishService {
   basketDishesStore: IRestaurantDish[] = [];
   favoriteDishesStore: IRestaurantDish[] = [];
-  basketStore$ = new BehaviorSubject<IRestaurantDish[]>(this.basketDishesStore);
+  basketStore$: BehaviorSubject<IRestaurantDish[]> = new BehaviorSubject<IRestaurantDish[]>(this.basketDishesStore);
 
   constructor(private http: HttpClient) { }
 
@@ -24,8 +24,24 @@ export class DishService {
   }
 
   addToBasket(dish: IRestaurantDish): void {
-    const currentDishes = this.basketStore$.value;
-    this.basketStore$.next([...currentDishes, { ...dish }]);
+    const currentDishes: IRestaurantDish[] = this.basketStore$.value;
+    const currentDishesIndex: number = currentDishes.findIndex(
+      basketDish => basketDish.name === dish.name && basketDish.restaurant === dish.restaurant
+    );
+
+    if (currentDishesIndex > -1) {
+      const updateDishQuantity: IRestaurantDish = {
+        ...currentDishes[currentDishesIndex],
+        quantity: (currentDishes[currentDishesIndex].quantity || 1) + 1
+      };
+
+      const updateDishes: IRestaurantDish[] = [...currentDishes];
+      updateDishes[currentDishesIndex] = updateDishQuantity;
+
+      this.basketStore$.next(updateDishes);
+    } else {
+      this.basketStore$.next([...currentDishes, { ...dish, quantity: 1 }]);
+    }
   }
 
   clearBasket(): void {
@@ -38,7 +54,7 @@ export class DishService {
       basketDish => basketDish.name === dish.name && basketDish.restaurant === dish.restaurant
     );
 
-    if(index > -1) {
+    if (index > -1) {
       const updated: IRestaurantDish[] = [...currentDishes];
 
       updated.splice(index, 1);
@@ -62,7 +78,7 @@ export class DishService {
         ? { ...basketDish, quantity: ((basketDish.quantity || 1) - 1, 1) }
         : basketDish
     );
-    
+
     this.basketStore$.next(currentDishes);
   }
 }

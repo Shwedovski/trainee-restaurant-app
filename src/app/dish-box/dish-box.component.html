@@ -8,39 +8,56 @@
 
     <div class="dish-footer">
       <span class="dish-price">{{ dish.price | currency : "UAH:" }}</span>
+      <h5 *ngIf="dishInBasket">Вже обрано</h5>
+    <div>
 
-      <div>
-        <button *ngIf="IsBasket" class="action-button" (click)="decreaseQuantity(dish)">-</button>
-        <span *ngIf="IsBasket" class="quantity">{{ dish.quantity || 1}}</span>
-        <button *ngIf="IsBasket" class="action-button" (click)="increaseQuantity(dish)">+</button>
+    <ng-container *ngIf="IsBasket || dishInBasket">
+      <button 
+        class="action-button" 
+        (click)="decreaseQuantity(dish)">-
+      </button>
+        
+      <span 
+        class="quantity">
+        {{ quantityInBasket }}
+      </span>
 
-        <button 
-          *ngIf="showBasketButton" 
-          class="action-button"   
-          mat-button
-          color="primary"
-          matTooltip="Додати до кошика"
-          (click)="addDishToBasket()">
-          <mat-icon>add_shopping_cart</mat-icon>
-        </button>
-        <button 
-          mat-button
-          color="primary"
-          matTooltip="Додати в улюблене"
-          *ngIf="showFavoriteButton" 
-          class="action-button" 
-          (click)="addDishToFavorite()">
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button 
-          mat-button
-          color="primary"
-          matTooltip="Видалити"
-          *ngIf="showRemoveButton" 
-          class="action-button" 
-          (click)="removeDish()">
-          <mat-icon>delete</mat-icon>
-        </button>
+      <button 
+        class="action-button" 
+        (click)="increaseQuantity(dish)">+
+      </button>
+    </ng-container>
+
+    <button
+      *ngIf="showBasketButton && !dishInBasket" 
+      class="action-button"   
+      mat-button
+      color="primary"
+      matTooltip="Додати до кошика"
+      (click)="addDishToBasket()">
+      <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+
+    <button 
+      *ngIf="showFavoriteButton" 
+      mat-button
+      color="primary"
+      matTooltip="Додати в улюблене"
+      class="action-button" 
+      (click)="addDishToFavorite()">
+      <mat-icon>favorite</mat-icon>
+    </button>
+
+    <button 
+      *ngIf="showRemoveButton" 
+      mat-button
+      color="primary"
+      matTooltip="Видалити"
+      class="action-button" 
+      (click)="removedDishEvent.emit(dish)">
+      <mat-icon>delete</mat-icon>
+    </button>
+
       </div>
     </div>
   </div>

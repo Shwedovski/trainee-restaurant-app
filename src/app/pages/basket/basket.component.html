@@ -4,7 +4,7 @@
 </ng-template>
 
   <button 
-    *ngIf="(basketDishes$ | async)?.length || 0 > 0"
+    *ngIf="(basketDishes$ | async)?.length"
     mat-button
     color="primary" 
     matTooltip="Очистити корзину"
@@ -18,7 +18,7 @@
         [dish]="dish"
         [IsBasket]="true"
         [showRemoveButton]="true"
-        (remove)="removeFromBasket(dish)">
+        (removedDishEvent)="removeFromBasket(dish)">
       </app-dish-box>
     </ng-container>
   </div>
