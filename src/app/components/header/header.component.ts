@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
   onRestaurantChange(event: Event) {
     const select = event.target as HTMLSelectElement;
     const value = select.value;
+
     console.log("selectedRestaurant", value);
     if (value) {
       this.router.navigate([value]);

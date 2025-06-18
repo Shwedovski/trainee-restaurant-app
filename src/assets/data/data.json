@@ -20,7 +20,8 @@
 			"price": 240,
 			"specialLabel": "New 2025",
 			"restaurant": "Plesentville",
-			"updatedDate": "Thu Apr 24 2025 11:01:38 GMT+0300"
+			"updatedDate": "Thu Apr 24 2025 11:01:38 GMT+0300",
+			"weeklyOrders": 100
 		},
 		{
 			"name": "Cheese Burger",
@@ -30,7 +31,8 @@
 			"price": 290,
 			"specialLabel": null,
 			"restaurant": "Plesentville",
-			"updatedDate": "Web Apr 23 2025 09:00:38 GMT+0300"
+			"updatedDate": "Web Apr 23 2025 09:00:38 GMT+0300",
+			"weeklyOrders": 15
 		},
 		{
 			"name": "Junior Burger",
@@ -39,7 +41,8 @@
 			"category": "burger",
 			"price": 175,
 			"specialLabel": null,
-			"restaurant": "Plesentville"
+			"restaurant": "Plesentville",
+			"weeklyOrders": 10
 		},
 		{
 			"name": "Mario pizza",
@@ -49,7 +52,8 @@
 			"price": 280,
 			"specialLabel": null,
 			"restaurant": "Mario",
-			"updatedDate": "Web Apr 23 2025 09:00:38 GMT+0300"
+			"updatedDate": "Web Apr 23 2025 09:00:38 GMT+0300",
+			"weeklyOrders": 1
 		},
 		{
 			"name": "Bacon pizza",
@@ -59,7 +63,8 @@
 			"price": 290,
 			"specialLabel": "Best choice",
 			"restaurant": "Mario",
-			"updatedDate": "Web Apr 23 2025 12:15:00 GMT+0300"
+			"updatedDate": "Web Apr 23 2025 12:15:00 GMT+0300",
+			"weeklyOrders": null
 		},
 		{
 			"name": "Philadelphia",
@@ -68,7 +73,8 @@
 			"category": "pizza",
 			"price": 240,
 			"specialLabel": "Hot",
-			"restaurant": "Mario"
+			"restaurant": "Mario",
+			"weeklyOrders": 10
 		},
 		{
 			"name": "Simona",
@@ -78,7 +84,8 @@
 			"price": 215,
 			"specialLabel": null,
 			"restaurant": "Mario",
-			"updatedDate": "Tue Apr 22 2025 12:15:00 GMT+0300"
+			"updatedDate": "Tue Apr 22 2025 12:15:00 GMT+0300",
+			"weeklyOrders": 12
 		},
 		{
 			"name": "Four cheese",
@@ -87,7 +94,8 @@
 			"category": "pizza",
 			"price": 215,
 			"specialLabel": null,
-			"restaurant": "Mario"
+			"restaurant": "Mario",
+			"weeklyOrders": 17
 		},
 		{
 			"name": "Greek salad",
@@ -96,7 +104,8 @@
 			"category": "salad",
 			"price": 215,
 			"specialLabel": null,
-			"restaurant": "Mario"
+			"restaurant": "Mario",
+			"weeklyOrders": 170
 		},
 		{
 			"name": "Cesarrini",
@@ -105,7 +114,8 @@
 			"category": "salad",
 			"price": 240,
 			"specialLabel": null,
-			"restaurant": "Mario"
+			"restaurant": "Mario",
+			"weeklyOrders": 130
 		},
 		{
 			"name": "Cesarrini Tayko",
@@ -114,7 +124,8 @@
 			"category": "salad",
 			"price": 290,
 			"specialLabel": null,
-			"restaurant": "Tayko"
+			"restaurant": "Tayko",
+			"weeklyOrders": 10
 		},
 		{
 		
@@ -124,7 +135,8 @@
 			"category": "salad",
 			"price": 210,
 			"specialLabel": "Unique",
-			"restaurant": "Tayko"
+			"restaurant": "Tayko",
+			"weeklyOrders": null
 		},
 		{
 		
@@ -134,7 +146,8 @@
 			"category": "salad",
 			"price": 210,
 			"specialLabel": null,
-			"restaurant": "Tayko"
+			"restaurant": "Tayko",
+			"weeklyOrders": 17
 		}
 	]
 }

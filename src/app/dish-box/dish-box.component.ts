@@ -23,14 +23,14 @@ export class DishBoxComponent {
   @Input() IsBasket: boolean = false;
   @Input() showFavoriteButton: boolean = false;
   @Input() showBasketButton: boolean = false;
-  
-  @Output() removedDishEvent: EventEmitter<IRestaurantDish> = new EventEmitter<IRestaurantDish>();
 
-  constructor(private dishService: DishService,
-  ) { }
+  @Output() removedDishEvent: EventEmitter<IRestaurantDish> = new EventEmitter<IRestaurantDish>();
 
   dishInBasket: boolean = false;
   quantityInBasket: number = 0;
+
+  constructor(private dishService: DishService,
+  ) { }
 
 
   ngOnInit(): void {

@@ -15,10 +15,7 @@ export class CategoriesListComponent implements OnInit {
   constructor(private categoryServise: CategoryService) { }
 
   ngOnInit() {
-    this.categoryServise.getCategories().subscribe(data => {
-      this.categoriesNames = data;
-      console.log('all good', data);
-    });
+    this.initCategories();
   }
 
   getCategoryName(category: string): string {
@@ -33,6 +30,13 @@ export class CategoriesListComponent implements OnInit {
 
   imageError(event: Event) {
     const target = event.target as HTMLImageElement;
+
     target.src = 'assets/images/default.png';
+  }
+
+  initCategories(): void {
+    this.categoryServise.getCategories().subscribe(data => {
+      this.categoriesNames = data;
+    });
   }
 }
