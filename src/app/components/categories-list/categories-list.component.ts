@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { CategoryService } from '../../services/category.service';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,17 +8,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './categories-list.component.html',
   styleUrl: './categories-list.component.scss'
 })
-export class CategoriesListComponent implements OnInit {
-  categoriesNames: string[] = [];
-
-  constructor(private categoryServise: CategoryService) { }
-
-  ngOnInit() {
-    this.categoryServise.getCategories().subscribe(data => {
-      this.categoriesNames = data;
-      console.log('all good', data);
-    });
-  }
+export class CategoriesListComponent {
+  @Input() categoriesNames: string[] = [];
+  @Output() categorySelected = new EventEmitter<string>();
 
   getCategoryName(category: string): string {
     switch (category) {
@@ -34,5 +25,9 @@ export class CategoriesListComponent implements OnInit {
   imageError(event: Event) {
     const target = event.target as HTMLImageElement;
     target.src = 'assets/images/default.png';
+  }
+
+  onCategorySelected(category: string) {
+    this.categorySelected.emit(category);
   }
 }

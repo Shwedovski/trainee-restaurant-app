@@ -1,2 +1,12 @@
-<app-categories-list></app-categories-list>
+<app-categories-list
+    [categoriesNames]="categories"
+    (categorySelected)="onCategoryClick($event)">
+</app-categories-list>
+
+<ng-container *ngIf="selectedCategoryDishes.length > 0">
+    <div class="dish-list"> 
+        <app-dish-box *ngFor="let dish of selectedCategoryDishes" [dish]="dish"></app-dish-box>
+    </div>
+</ng-container>
+
 <p>home works!</p>
