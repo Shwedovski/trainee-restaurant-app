@@ -13,8 +13,6 @@ export class CategoriesListComponent implements OnInit {
   @Input() categoriesNames: string[] = [];
   @Output() categorySelected = new EventEmitter<string>();
 
-  categoriesNames: string[] = [];
-
   constructor(private categoryServise: CategoryService) { }
 
   ngOnInit() {
