@@ -1,13 +1,55 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CategoriesListComponent } from '../../components/categories-list/categories-list.component';
+import { DishService } from '../../services/dish.service';
+import { CategoryService } from '../../services/category.service';
+import { IRestaurantDish } from '../../shared/interfaces/IRestaurantDish';
+import { CommonModule } from '@angular/common';
+import { DishBoxComponent } from "../../dish-box/dish-box.component";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CategoriesListComponent],
+  imports: [
+    CategoriesListComponent,
+    CommonModule,
+    DishBoxComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
+  allDishes: IRestaurantDish[] = [];
+  categories: string[] = [];
+  selectedCategoryDishes: IRestaurantDish[] = [];
+  selectedCategory: string = '';
+
+  constructor(
+    private dishService: DishService,
+    private categoryServise: CategoryService,
+  ) { }
+
+  ngOnInit(): void {
+    this.initCategories();
+    this.initDishes();
+  }
+
+  onCategoryClick(category: string): void {
+    this.selectedCategory = category;
+    this.selectedCategoryDishes = this.allDishes.filter((dish:IRestaurantDish) => dish.category === category);
+  }
+
+  private initDishes(): void {
+    this.dishService.getDishes().subscribe(dishes => {
+      this.allDishes = dishes.dishes;
+      this.selectedCategoryDishes = [];
+    });
+  }
+
+  private initCategories(): void {
+    this.categoryServise.getCategories().subscribe((categories: string[]) => {
+      this.categories = categories;
+    });
+  }
 }

@@ -1,6 +1,6 @@
 <div class="category-box">
-    <a *ngFor="let category of categoriesNames" href="#" class="box">
-        <img [src]="'/assets/images/' + category + '.png'" (error)="imageError($event)"/>
+    <button *ngFor="let category of categoriesNames" class="box" (click)="onCategorySelected(category)">
+        <img [src]="'/assets/images/' + category + '.png'" (error)="imageError($event)"/> 
         <span class="text-box">{{ getCategoryName(category) }}</span>
-    </a>
+    </button>
 </div>

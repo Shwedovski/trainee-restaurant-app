@@ -73,12 +73,27 @@ export class DishService {
   }
 
   decreaseQuantity(dish: IRestaurantDish): void {
-    const currentDishes: IRestaurantDish[] = this.basketStore$.value.map(
-      basketDish => basketDish.name === dish.name && basketDish.restaurant === dish.restaurant
-        ? { ...basketDish, quantity: ((basketDish.quantity || 1) - 1, 1) }
-        : basketDish
-    );
+    const currentDishes: IRestaurantDish[] = this.basketStore$.value;
 
-    this.basketStore$.next(currentDishes);
+    const updatedDishes: IRestaurantDish[] = currentDishes.reduce<IRestaurantDish[]>((updatedBasket, basketDish) => {
+
+      if (basketDish.name === dish.name && basketDish.restaurant === dish.restaurant) {
+        const currentQuantity: number = basketDish.quantity || 1;
+        if (currentQuantity > 1) {
+          updatedBasket.push({ ...basketDish, quantity: currentQuantity - 1 });
+        }
+      } else {
+        updatedBasket.push(basketDish);
+      }
+      return updatedBasket;
+    }, []);
+
+    this.basketStore$.next(updatedDishes);
+  }
+
+  getAllDishes(): Observable<IRestaurantDish[]> {
+    return this.http.get<{ dishes: IRestaurantDish[] }>('assets/data/data.json').pipe(
+      map(data => data.dishes)
+    );
   }
 }
