@@ -1,12 +1,25 @@
-<app-categories-list
-    [categoriesNames]="categories"
+<app-categories-list 
+    [categoriesNames]="categories" 
     (categorySelected)="onCategoryClick($event)">
 </app-categories-list>
 
+<div class="sort-buttons">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" >
+    <mat-button-toggle (click)="sortByOrders(sortOrders.DESC)">За збільшенням</mat-button-toggle>
+    <mat-button-toggle (click)="sortByOrders(sortOrders.ASC)">За зменшенням</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
 <ng-container *ngIf="selectedCategoryDishes.length > 0">
-    <div class="dish-list"> 
+    <div class="dish-list">
         <app-dish-box *ngFor="let dish of selectedCategoryDishes" [dish]="dish"></app-dish-box>
     </div>
 </ng-container>
 
-<p>home works!</p>
+<ng-container *ngIf="selectedCategoryDishes.length === 0">
+    <div class="no-dishes">
+        <img src="https://cdni.iconscout.com/illustration/premium/thumb/cook-said-oops-no-food-available-illustration-download-in-svg-png-gif-file-formats--online-ordering-service-and-delivery-pack-e-commerce-shopping-illustrations-1784257.png"
+            alt="No dishes available" />
+        <h4>Отакої, здається немає страв в цій категорії. Юра, ментор всіх менторів, додай страв в json будь-ласка :3</h4>
+    </div>
+</ng-container>

@@ -5,7 +5,13 @@ import { CategoryService } from '../../services/category.service';
 import { IRestaurantDish } from '../../shared/interfaces/IRestaurantDish';
 import { CommonModule } from '@angular/common';
 import { DishBoxComponent } from "../../dish-box/dish-box.component";
-import { Observable } from 'rxjs';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { DishFilterComponent } from "../../components/dish-filter/dish-filter.component";
+
+export enum SortOrders {
+  ASC = 'asc',
+  DESC = 'desc'
+}
 
 @Component({
   selector: 'app-home',
@@ -13,13 +19,18 @@ import { Observable } from 'rxjs';
   imports: [
     CategoriesListComponent,
     CommonModule,
-    DishBoxComponent
+    DishBoxComponent,
+    MatButtonToggleModule,
+
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit {
 
+
+export class HomeComponent implements OnInit {
+  
+  sortOrders = SortOrders;
   allDishes: IRestaurantDish[] = [];
   categories: string[] = [];
   selectedCategoryDishes: IRestaurantDish[] = [];
@@ -28,6 +39,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private dishService: DishService,
     private categoryServise: CategoryService,
+
   ) { }
 
   ngOnInit(): void {
@@ -37,13 +49,30 @@ export class HomeComponent implements OnInit {
 
   onCategoryClick(category: string): void {
     this.selectedCategory = category;
-    this.selectedCategoryDishes = this.allDishes.filter((dish:IRestaurantDish) => dish.category === category);
+    this.selectedCategoryDishes = this.allDishes
+      .filter((dish: IRestaurantDish) => dish.category === category)
+      .sort((ascDish, descDish) => (descDish.weeklyOrders || 0) - (ascDish.weeklyOrders || 0));
+
+  }
+
+  sortByOrders(directionOfSort: SortOrders): void {
+    if (directionOfSort === SortOrders.ASC) {
+      this.selectedCategoryDishes
+        .sort((ascDish: IRestaurantDish, descDish: IRestaurantDish) =>
+          (ascDish.weeklyOrders || 0) - (descDish.weeklyOrders || 0)
+        );
+    } else if (directionOfSort === SortOrders.DESC) {
+      this.selectedCategoryDishes
+        .sort((ascDish: IRestaurantDish, descDish: IRestaurantDish) =>
+          (descDish.weeklyOrders || 0) - (ascDish.weeklyOrders || 0)
+        );
+    }
   }
 
   private initDishes(): void {
     this.dishService.getDishes().subscribe(dishes => {
       this.allDishes = dishes.dishes;
-      this.selectedCategoryDishes = [];
+      this.onCategoryClick('burger');
     });
   }
 
